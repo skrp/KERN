@@ -9,6 +9,6 @@ DNS - Domain Node Service = { node{port} = ; }
 
 %NET{} = $NETID_salt_hash;
 @node = $NETID;
-$port = $service;
+$port = $key_family[];
 @key_family[] = 'range of $SKEY in 10k steps';
 $NET{node[$port]} = $key_family;
