@@ -1,0 +1,16 @@
+
+####################
+# KERN - unix kernel
+
+KERN.CONF 
+pf 
+NET => 
+DNS - Domain Node Service = { node{port} = ; }
+
+
+node[port] = '';
+
+DNS{node[]};
+node[] = "port port port";
+or
+node{$port} = $service[$[port]];
