@@ -4,28 +4,52 @@
   [1] buildworld
   [2] jail
   [3] pf 
+  [5] udp
 #########################
 # FREEBSD ANONI JAIL GATE
-ANONI   - user anonymous jail
-SOTOPSK - Sender One Time Only PreShared Key
-ROTOPSK - Reciever One Time Only PreShared Key
-OTOPSK  - One Time Only PreShared Key, data that is scrubbed after being OTO
-USB     - KRIP SICC Datablocks 
+
+KERN.CONF  - sha signed kernel build
+buildworld - FreeBSD world build
+pf.conf    - pf configuration
+pam.conf   - pam configuration
+ANONI      - user anonymous jail
+SOTOPSK    - Sender One Time Only PreShared Key
+ROTOPSK    - Reciever One Time Only PreShared Key
+OTOPSK     - One Time Only PreShared Key, data that is scrubbed after being OTO
+USB        - KRIP SICC Datablocks 
+UDP        - protocol of udp transmission
 # INTRO #################
   SOTOPSK = usb -> host$usr_s
   ROTOPSK = usb -> host$usr_r
   
   usr -> usb -> SICC -> SOTOPSK -> ip4{$port}
   SICC <- usb <- usr <- ip4{$port} <- ROTOPSK <- service
-  
+# example ################  
   fred -> SOTOPSK -> 11101@0.6.6.6:6663
   fred <- 11101@0.6.6.6:3666 <- ROTOPSK <- service
 # external
-usr@ip4 => host_ip4 => ANONI
-usr-> SOTOPSK -> service
-usr <- ROTOPSK_PACKET <- service
+usr_ip4 => host_ip4
+usr -> SOTOPSK -> host_ip4 -> ANONI
 # internal
-ANONI -> service
+                              ANONI -> service
+service -> ROTOPSK -> ANONI -> usr
+#############
+usr <- ROTOPSK_PACKET <- ANONI <- service
+
+int               |  ext
+------------------|-------------------------
+                  | usr -> host_ip4 -> SOTOPSK
+SOTOPSK -> ANONI  |
+                  | usr -> login -> SSOTOPSK
+                  | service -> usr_ip4 -> ROTOPSK
+                  |
+                    <- ANONI <- service
+# external
+usr <- ROTOPSK_PACKET <- ANONI <- service
+# internal
+  SOTOPSK auth ANONI
+  usr -> ANONI -> service
+  ANONI -> service
 # PROTO #################
 %NET{} = $NETID_salt_hash;
 @node = $NETID;
