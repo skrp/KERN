@@ -16,11 +16,10 @@ USB - KRIP SICC Datablocks
   ROTOPSK = usb -> host$usr_r
   
   usr -> usb -> ip4{$port} 
-  SOTOPSK
   $ip4{$port} = $usr_key
   
   fred -> SOTOPSK -> 11101@0.6.6.6:6663
-  fred <- 11101@0.6.6.6:3666 <-ROTOPSK_PACKET <- service
+  fred <- 11101@0.6.6.6:3666 <- ROTOPSK <- service
 # external
 usr@ip4 => host_ip4 => ANONI
 usr-> SOTOPSK -> service
