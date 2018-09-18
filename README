@@ -8,7 +8,9 @@
 # FREEBSD ANONI JAIL GATE
 ANONI - user anonymous jail
 # external
-user@ip4 => host_ip4 => ANONI
+usr@ip4 => host_ip4 => ANONI
+usr-> OTOPSK -> service
+usr <- OTOPSK_PACKET <- service
 # internal
 ANONI -> service
 # PROTO #################
