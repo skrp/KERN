@@ -7,10 +7,24 @@
 #########################
 # FREEBSD ANONI JAIL GATE
 ANONI - user anonymous jail
+SOTOPSK - Sender One Time Only PreShared Key
+ROTOPSK - Reciever One Time Only PreShared Key
+OTOPSK - One Time Only PreShared Key
+  ip4{port} = $usr_key
+  
+  fred -> usb -> host$usr_s
+  usb -> host$usr_r
+  
+  {$ip4{$port} = $usr_key
+  fred -> 11101@0.6.6.6:6663
+   fred <- host$user_r <-ROTOPSK_PACKET <- service
+  
+  
+  
 # external
 usr@ip4 => host_ip4 => ANONI
-usr-> OTOPSK -> service
-usr <- OTOPSK_PACKET <- service
+usr-> SOTOPSK -> service
+usr <- ROTOPSK_PACKET <- service
 # internal
 ANONI -> service
 # PROTO #################
