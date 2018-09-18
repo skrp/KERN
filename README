@@ -1,5 +1,4 @@
-
-####################
+#########################
 # KERN - unix kernel
   [0] KERN.CONF 
   [1] buildworld
