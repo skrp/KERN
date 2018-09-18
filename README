@@ -15,8 +15,8 @@ USB - KRIP SICC Datablocks
   SOTOPSK = usb -> host$usr_s
   ROTOPSK = usb -> host$usr_r
   
-  usr -> usb -> host$usr_s
-  
+  usr -> usb -> ip4{$port} 
+  SOTOPSK
   $ip4{$port} = $usr_key
   
   fred -> SOTOPSK -> 11101@0.6.6.6:6663
