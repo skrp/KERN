@@ -9,7 +9,7 @@
 ANONI - user anonymous jail
 SOTOPSK - Sender One Time Only PreShared Key
 ROTOPSK - Reciever One Time Only PreShared Key
-OTOPSK - One Time Only PreShared Key
+OTOPSK - One Time Only PreShared Key, data that is scrubbed after being OTO
 USB - KRIP SICC Datablocks 
 # INTRO #################
   SOTOPSK = usb -> host$usr_s
