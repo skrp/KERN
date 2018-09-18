@@ -10,6 +10,8 @@ ANONI - user anonymous jail
 SOTOPSK - Sender One Time Only PreShared Key
 ROTOPSK - Reciever One Time Only PreShared Key
 OTOPSK - One Time Only PreShared Key
+USB - KRIP SICC Datablocks 
+
   ip4{port} = $usr_key
   
   SOTOPSK = usb -> host$usr_s
@@ -18,8 +20,9 @@ OTOPSK - One Time Only PreShared Key
   fred -> usb -> host$usr_s
   
   {$ip4{$port} = $usr_key
-  fred -> 11101@0.6.6.6:6663
-   fred <- host$user_r <-ROTOPSK_PACKET <- service
+  
+  fred -> SOTOPSK -> 11101@0.6.6.6:6663
+  fred <- 11101@0.6.6.6:3666 <-ROTOPSK_PACKET <- service
   
   
   
