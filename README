@@ -7,8 +7,17 @@ pf
 NET => 
 DNS - Domain Node Service = { node{port} = ; }
 
+#########################
+# FREEBSD ANONI JAIL GATE
+
+ANONI - user anonymous jail
+
+user@ip4 => host_ip4 => ANONI
+
+# PROTO #################
 %NET{} = $NETID_salt_hash;
 @node = $NETID;
 $port = $key_family[];
 @key_family[] = 'range of $SKEY in 10k steps';
+
 $NET{node[$port]} = $key_family;
