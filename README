@@ -1,12 +1,10 @@
 
 ####################
 # KERN - unix kernel
-
-KERN.CONF 
-pf 
-NET => 
-DNS - Domain Node Service = { node{port} = ; }
-
+  [0] KERN.CONF 
+  [1] buildworld
+  [2] jail
+  [3] pf 
 #########################
 # FREEBSD ANONI JAIL GATE
 ANONI - user anonymous jail
