@@ -7,7 +7,8 @@ pf
 NET => 
 DNS - Domain Node Service = { node{port} = ; }
 
-@service[$port] = $service;
-
-$key_family = 'range of $SKEY';
+%NET{} = $NETID_salt_hash;
+@node = $NETID;
+@port[] = $service;
+@key_family[] = 'range of $SKEY in 10k steps';
 $NET{node[$port]} = $key_family;
