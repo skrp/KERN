@@ -12,7 +12,10 @@ DNS - Domain Node Service = { node{port} = ; }
 
 ANONI - user anonymous jail
 
+# external
 user@ip4 => host_ip4 => ANONI
+# internal
+ANONI -> service
 
 # PROTO #################
 %NET{} = $NETID_salt_hash;
