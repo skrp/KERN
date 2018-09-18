@@ -8,4 +8,6 @@ NET =>
 DNS - Domain Node Service = { node{port} = ; }
 
 @service[$port] = $service;
-node{$service[$port]} = $service;
+
+$key_family = 'range of $SKEY';
+$NET{node[$port]} = $key_family;
