@@ -21,9 +21,6 @@ USB - KRIP SICC Datablocks
   
   fred -> SOTOPSK -> 11101@0.6.6.6:6663
   fred <- 11101@0.6.6.6:3666 <-ROTOPSK_PACKET <- service
-  
-  
-  
 # external
 usr@ip4 => host_ip4 => ANONI
 usr-> SOTOPSK -> service
