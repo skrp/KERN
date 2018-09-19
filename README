@@ -11,8 +11,8 @@ Operating System kernel
   [5] udp
 #########################
 # FREEBSD ANONI JAIL GATE
-KERN.CONF  - sha signed kernel build
-buildworld - FreeBSD world build
+KERN.CONF  - sha-signed kernel build
+buildworld - FreeBSD world build of sha-signed conf
 pf.conf    - pf configuration
 pam.conf   - pam configuration
 ANONI      - user anonymous jail
