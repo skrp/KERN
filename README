@@ -43,10 +43,11 @@ int               |  ext
 ------------------|-------------------------
                   | usr -> host_ip4 -> SOTOPSK
 SOTOPSK -> ANONI  |
-                  | usr -> login -> SSOTOPSK
-                  | service -> usr_ip4 -> ROTOPSK
+                  | usr -> host_ip4 -> AOTOPSK
+usr <- login <- AOTOPSK 
+                  | host_ip4 -> usr_ip4 -> ROTOPSK
                   |
-                    <- ANONI <- service
+                  |  <- ANONI <- service
 # external
 usr <- ROTOPSK_PACKET <- ANONI <- service
 # internal
