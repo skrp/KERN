@@ -2,6 +2,14 @@
 # KERN - persistent unix kernel
 A persistent kernel computer build that will never update
 Each computer node an unchanging unix entity with a reputation on the NET
+REP is gained via new files available on the network
+
+billy_fks_donkeys1969 => push new file to NET
+                      => witness_node verifies event
+                 NET  <= witness_node update REP
+                      <= bkup_scrapers scrape file
+                 NET  <= bkup_scrapers update REP
+                    
 #########################
   [0] KERN.CONF 
   [1] buildworld
