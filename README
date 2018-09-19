@@ -3,6 +3,7 @@
 A persistent kernel computer build that will never update
 Each computer node an unchanging unix entity with a reputation on the NET
 REP is gained via new files available on the network
+KEY is a One Time Only Pre-Shared Key existing on both usr usb & ANONI filesystem 
 
 billy_fks_donkeys1969 => push new file to NET
                       => witness_node verifies event
