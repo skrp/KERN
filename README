@@ -1,8 +1,7 @@
 #########################
 # KERN - persistent unix kernel
 A persistent kernel computer build that will never update
-Each computer node an unchanging unix entity
-Operating System kernel
+Each computer node an unchanging unix entity with a reputation on the NET
 #########################
   [0] KERN.CONF 
   [1] buildworld
